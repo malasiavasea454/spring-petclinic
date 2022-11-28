@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './mvnw clean install site surefire-report:report'
+        sh '.mvn sonar:sonar -Dsonar.login=myAuthenticationToken'
         sh 'tree'
       }
     }
