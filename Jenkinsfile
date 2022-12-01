@@ -10,10 +10,11 @@ pipeline {
         sh 'tree'
       }
     }
-    stages {
+   stages {
     stage('Build Docker') {
       steps {
-        sh 'docker ps'
+        sh 'docker build . -t "pet-clinic"'
+        sh 'docker images'
       }
     }
   }
