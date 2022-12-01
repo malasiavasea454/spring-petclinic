@@ -8,8 +8,16 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn sonar:sonar -Dsonar.login=a710316cf3af5e6b2a64c20617c7d782f6b2744f'
-        sh 'tree'
+        withCredentials([usernamePassword(credentialsId: 'sonar-cloud', passwordVariable: 'SONAR_TOKEN', usernameVariable: '')]) {
+          sh """
+            mvn clean test sonar:sonar \
+              -Dsonar.login=$SONAR_TOKEN \
+              -Dsonar.host.url=https://sonarcloud.io \
+              -Dsonar.projectKey=testPetclinicKey \
+              -Dsonar.organization=testorgkey1
+            """
+          sh 'tree'
+        }
       }
     }
     stage('Build Docker') {
