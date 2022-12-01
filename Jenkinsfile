@@ -10,5 +10,11 @@ pipeline {
         sh 'tree'
       }
     }
+    stages {
+    stage('Build Docker') {
+      steps {
+        sh 'docker ps'
+      }
+    }
   }
 }
