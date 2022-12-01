@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn sonar:sonar -Dsonar.login=sqa_2c662513216ad777d27d41fbbfdf4b8b2d908de0'
+        sh 'mvn sonar:sonar -Dsonar.login=a710316cf3af5e6b2a64c20617c7d782f6b2744f'
         sh 'tree'
       }
     }
