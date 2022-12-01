@@ -12,7 +12,6 @@ pipeline {
         sh 'tree'
       }
     }
-   stages {
     stage('Build Docker') {
       steps {
         sh 'docker build -t "pet-clinic:${BUILD_NUMBER}" .'
