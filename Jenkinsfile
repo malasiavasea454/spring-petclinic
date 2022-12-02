@@ -16,7 +16,7 @@ pipeline {
               -Dsonar.projectKey=testPetclinicKey \
               -Dsonar.organization=testorgkey1
             """
-          sh 'tree'
+         
         }
       }
     }
