@@ -20,11 +20,11 @@ pipeline {
         }
       }
     }
-    stage('Build Docker') {
+     stage('Docker Build') {
       steps {
-        sh 'docker build -t "pet-clinic:${BUILD_NUMBER}" .'
-        sh 'docker images'
+      	sh 'docker build -t shanem/spring-petclinic:latest .'
       }
+    }
     }
   }
 }
